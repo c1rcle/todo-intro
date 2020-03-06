@@ -3,6 +3,7 @@ import { AppState } from './context/AppContext';
 import Dialog from './components/Dialog';
 import Navigation from './components/Navigation';
 import { Container } from 'react-bootstrap';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       <div className='App'>
         <Dialog />
         <Navigation />
-        <Container></Container>
+        <Container className='my-3'>
+          <TodoList />
+        </Container>
       </div>
     </AppState>
   );
