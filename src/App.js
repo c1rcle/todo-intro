@@ -1,9 +1,18 @@
 import React from 'react';
+import { AppState } from './context/AppContext';
+import Dialog from './components/Dialog';
+import Navigation from './components/Navigation';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <AppState>
+      <div className='App'>
+        <Dialog />
+        <Navigation />
+        <Container></Container>
+      </div>
+    </AppState>
   );
 }
 
