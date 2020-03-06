@@ -8,7 +8,7 @@ const Dialog = () => {
 
   return (
     <Modal show={dialogVisible} onHide={() => setDialogVisible(false)}>
-      <Modal.Header>
+      <Modal.Header closeButton>
         <Modal.Title>New todo list</Modal.Title>
       </Modal.Header>
 
