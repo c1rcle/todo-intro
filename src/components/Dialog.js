@@ -8,7 +8,8 @@ const Dialog = () => {
 
   const [name, setName] = useState('');
 
-  const addListPressed = () => {
+  const addListPressed = event => {
+    event.preventDefault();
     if (name !== '') addList(name);
     setDialogVisible(false);
     setName('');
@@ -20,23 +21,25 @@ const Dialog = () => {
         <Modal.Title>New todo list</Modal.Title>
       </Modal.Header>
 
-      <Modal.Body>
-        <Form.Control
-          type='text'
-          placeholder='Enter name'
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-      </Modal.Body>
+      <Form onSubmit={addListPressed}>
+        <Modal.Body>
+          <Form.Control
+            type='text'
+            placeholder='Enter name'
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+        </Modal.Body>
 
-      <Modal.Footer>
-        <Button variant='primary' onClick={addListPressed}>
-          Create
-        </Button>
-        <Button variant='secondary' onClick={() => setDialogVisible(false)}>
-          Close
-        </Button>
-      </Modal.Footer>
+        <Modal.Footer>
+          <Button variant='primary' type='submit'>
+            Create
+          </Button>
+          <Button variant='secondary' onClick={() => setDialogVisible(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Form>
     </Modal>
   );
 };

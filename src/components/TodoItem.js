@@ -1,5 +1,13 @@
 import React, { Fragment, useContext, useState } from 'react';
-import { Card, Form, ListGroup, Button, InputGroup } from 'react-bootstrap';
+import {
+  Card,
+  Form,
+  ListGroup,
+  Button,
+  InputGroup,
+  Row,
+  Col
+} from 'react-bootstrap';
 import Task from './Task';
 import AppContext from '../context/AppContext';
 import ItemContext from '../context/ItemContext';
@@ -14,7 +22,8 @@ const TodoItem = props => {
 
   const [content, setContent] = useState('');
 
-  const addTaskPressed = () => {
+  const addTaskPressed = event => {
+    event.preventDefault();
     if (content !== '') addTask(content);
     setContent('');
   };
@@ -23,26 +32,32 @@ const TodoItem = props => {
     <Fragment>
       <Card>
         <Card.Header as='h5' className='bg-primary text-white'>
-          {name}
-          <button className='close' onClick={() => removeList(id)}>
-            ×
-          </button>
+          <Row>
+            <Col className='trimText'>{name}</Col>
+            <Col>
+              <button className='close' onClick={() => removeList(id)}>
+                ×
+              </button>
+            </Col>
+          </Row>
         </Card.Header>
 
         <Card.Body>
-          <InputGroup>
-            <Form.Control
-              type='text'
-              placeholder='Enter a new task'
-              value={content}
-              onChange={e => setContent(e.target.value)}
-            />
-            <InputGroup.Append>
-              <Button variant='success' onClick={addTaskPressed}>
-                Add
-              </Button>
-            </InputGroup.Append>
-          </InputGroup>
+          <Form onSubmit={addTaskPressed}>
+            <InputGroup>
+              <Form.Control
+                type='text'
+                placeholder='Enter a new task'
+                value={content}
+                onChange={e => setContent(e.target.value)}
+              />
+              <InputGroup.Append>
+                <Button variant='success' onClick={addTaskPressed}>
+                  Add
+                </Button>
+              </InputGroup.Append>
+            </InputGroup>
+          </Form>
         </Card.Body>
 
         <ListGroup variant='flush'>
