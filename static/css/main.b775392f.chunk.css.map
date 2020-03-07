@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,UACE,kBAAmB,CACnB,eAAgB,CAChB,sBACF","file":"main.b775392f.chunk.css","sourcesContent":[".trimText {\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n}\r\n"]}
