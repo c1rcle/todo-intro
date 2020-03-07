@@ -14,7 +14,7 @@ const TodoList = () => {
         {lists.map(list => (
           <Col lg={4} className='form-group'>
             <ItemState>
-              <TodoItem key={list.id} name={list.name} />
+              <TodoItem key={list.id} id={list.id} name={list.name} />
             </ItemState>
           </Col>
         ))}

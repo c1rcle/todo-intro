@@ -1,12 +1,16 @@
 import React, { Fragment, useContext, useState } from 'react';
 import { Card, Form, ListGroup, Button, InputGroup } from 'react-bootstrap';
 import Task from './Task';
+import AppContext from '../context/AppContext';
 import ItemContext from '../context/ItemContext';
 
 const TodoItem = props => {
+  const appContext = useContext(AppContext);
   const itemContext = useContext(ItemContext);
+
+  const { removeList } = appContext;
   const { addTask, tasks } = itemContext;
-  const { name } = props;
+  const { id, name } = props;
 
   const [content, setContent] = useState('');
 
@@ -20,6 +24,9 @@ const TodoItem = props => {
       <Card>
         <Card.Header as='h5' className='bg-primary text-white'>
           {name}
+          <button className='close' onClick={() => removeList(id)}>
+            ×
+          </button>
         </Card.Header>
 
         <Card.Body>

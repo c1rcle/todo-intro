@@ -11,13 +11,18 @@ export const AppState = props => {
     setLists([...lists, { id: newId, name: name }]);
   };
 
+  const removeList = id => {
+    setLists(lists.filter(list => list.id !== id));
+  };
+
   return (
     <AppContext.Provider
       value={{
         dialogVisible,
         lists,
         setDialogVisible,
-        addList
+        addList,
+        removeList
       }}>
       {props.children}
     </AppContext.Provider>
