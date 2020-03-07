@@ -12,7 +12,7 @@ const TodoList = () => {
     <Fragment>
       <Row>
         {lists.map(list => (
-          <Col sm={4} className='form-group'>
+          <Col lg={4} className='form-group'>
             <ItemState>
               <TodoItem key={list.id} name={list.name} />
             </ItemState>

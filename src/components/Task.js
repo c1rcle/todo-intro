@@ -11,7 +11,7 @@ const Task = props => {
     <Fragment>
       <ListGroup.Item>
         <Row>
-          <Col md='auto' className='my-auto ml-1 pr-0'>
+          <Col xs='auto' className='my-auto ml-1 pr-0'>
             <Form.Check
               checked={task.checked}
               onChange={e => checkTask(task.id, e.target.checked)}
@@ -20,7 +20,7 @@ const Task = props => {
           <Col align='left' className='m-auto'>
             {task.checked ? <div className='text-muted'>{task.content}</div> : task.content}
           </Col>
-          <Col md='auto' className='mr-1'>
+          <Col xs='auto' className='mr-1'>
             <Button variant='danger' onClick={() => removeTask(task.id)}>
               <i className='fas fa-times' />
             </Button>
