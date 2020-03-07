@@ -1,6 +1,6 @@
 {
+  "homepage": "https://c1rcle.github.io/todo-intro/",
   "name": "todo-app",
-  "homepage": "https://c1rcle.github.io/todo-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
