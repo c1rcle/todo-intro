@@ -1,6 +1,7 @@
 import React, { Fragment, useContext } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import AppContext from '../context/AppContext';
+import { ItemState } from '../context/ItemContext';
 import TodoItem from './TodoItem';
 
 const TodoList = () => {
@@ -12,7 +13,9 @@ const TodoList = () => {
       <Row>
         {lists.map(list => (
           <Col sm={4} className='form-group'>
-            <TodoItem key={list.id} list={list} />
+            <ItemState>
+              <TodoItem key={list.id} name={list.name} />
+            </ItemState>
           </Col>
         ))}
       </Row>

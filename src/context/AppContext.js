@@ -8,12 +8,17 @@ export const AppState = props => {
 
   const addList = name => {
     let newId = lists.length === 0 ? 0 : lists[lists.length - 1].id + 1;
-    setLists([...lists, { id: newId, name: name, tasks: [] }]);
+    setLists([...lists, { id: newId, name: name }]);
   };
 
   return (
     <AppContext.Provider
-      value={{ dialogVisible, lists, setDialogVisible, addList }}>
+      value={{
+        dialogVisible,
+        lists,
+        setDialogVisible,
+        addList
+      }}>
       {props.children}
     </AppContext.Provider>
   );

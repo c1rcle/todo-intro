@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Navbar, Button, Nav } from 'react-bootstrap';
+import { Navbar, Button, Nav, Container } from 'react-bootstrap';
 import AppContext from '../context/AppContext';
 
 const Navigation = () => {
@@ -8,7 +8,7 @@ const Navigation = () => {
 
   return (
     <Navbar variant='dark' bg='primary'>
-      <div className='container'>
+      <Container>
         <Navbar.Brand>
           <i className='far fa-sticky-note' /> Todo list
         </Navbar.Brand>
@@ -17,7 +17,7 @@ const Navigation = () => {
             Add
           </Button>
         </Nav>
-      </div>
+      </Container>
     </Navbar>
   );
 };

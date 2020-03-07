@@ -10,8 +10,8 @@ const Dialog = () => {
 
   const addListPressed = () => {
     if (name !== '') addList(name);
-    setName('');
     setDialogVisible(false);
+    setName('');
   };
 
   return (
